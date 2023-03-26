@@ -52,13 +52,19 @@ def reduce(input):
 
     return results
 
-mapReduce = MapReduce(
-    map={
-        'data/users': map_users,
-        'data/clicks': map_clicks,
-    },
-    reduce=reduce,
-    output='data/filtered_clicks'
-)
+def main():
+    mapReduce = MapReduce(
+        map={
+            'data/users': map_users,
+            'data/clicks': map_clicks,
+        },
+        reduce=reduce,
+        output='data/filtered_clicks'
+    )
 
-mapReduce.run()
+    mapReduce.run()
+
+
+if __name__ == '__main__':
+    main()
+    

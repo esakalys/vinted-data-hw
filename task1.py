@@ -18,12 +18,18 @@ def reduce(input):
         }
     ]
 
-mapReduce = MapReduce(
-    map={
-        'data/clicks': map,
-    },
-    reduce=reduce,
-    output='data/total_clicks'
-)
 
-mapReduce.run()
+def main():
+    mapReduce = MapReduce(
+        map={
+            'data/clicks': map,
+        },
+        reduce=reduce,
+        output='data/total_clicks'
+    )
+
+    mapReduce.run()
+
+
+if __name__ == '__main__':
+    main()
